@@ -1,0 +1,35 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "barbershop-dna",
+  "compatibility_date": "2024-01-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "pages_build_output_dir": "./dist",
+
+  // D1 Database (SQLite) - Production
+  // IMPORTANT: Run `npm run db:create` first to get database_id
+  // Then replace "your-database-id" below with actual ID
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "barbershop-dna-production",
+      "database_id": "c36066ab-e490-4d96-b026-5e695889e710"
+    }
+  ]
+
+  // R2 Storage (for photos/images) - Uncomment when needed
+  // "r2_buckets": [
+  //   {
+  //     "binding": "R2",
+  //     "bucket_name": "barbershop-dna-assets"
+  //   }
+  // ],
+
+  // KV Storage (for sessions/cache) - Uncomment when needed
+  // "kv_namespaces": [
+  //   {
+  //     "binding": "KV",
+  //     "id": "your-kv-id",
+  //     "preview_id": "your-kv-preview-id"
+  //   }
+  // ]
+}
